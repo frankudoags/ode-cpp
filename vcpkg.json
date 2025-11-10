@@ -1,0 +1,8 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "My C++ project",
+  "dependencies": [
+    "catch2"
+  ]
+}

@@ -1,0 +1,12 @@
+#pragma once
+#include "solver.hpp"
+
+namespace ode {
+    class Euler: public Solver {
+        public:
+        Solution solve(const ODEFunction &f, const SolverConfig &config) override;
+        State step(const ODEFunction &f, Time t, const State &y, double h) override;
+        std::string name() const override { return "Euler"; }
+        int order() const override { return 1; }
+    };
+}

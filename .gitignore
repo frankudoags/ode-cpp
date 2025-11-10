@@ -1,0 +1,7 @@
+build/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.md
