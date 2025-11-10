@@ -142,4 +142,10 @@ TEST_CASE("Solvers: Initial condition preserved", "[all]") {
         Solution sol = solver.solve(f, config);
         REQUIRE(sol.front().state[0] == y0);
     }
+
+    SECTION("RK45") {
+        RK45Solver solver;
+        Solution sol = solver.solve(f, config);
+        REQUIRE(sol.front().state[0] == y0);
+    }
 }
