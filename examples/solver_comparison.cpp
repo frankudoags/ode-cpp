@@ -6,6 +6,33 @@
 #include <cmath>
 #include <chrono>
 
+/**
+ * Example 4: Solver Comparison and Benchmarking
+ *
+ * Compares the three main solvers on the same problem:
+ * - Euler (1st order)
+ * - RK4 (4th order fixed-step)
+ * - RK45 (4th/5th order adaptive)
+ *
+ * Test problem: dy/dt = -y, y(0) = 1
+ * Exact solution: y(t) = e^(-t)
+ *
+ * Metrics compared:
+ * - Accuracy (error vs exact solution)
+ * - Efficiency (number of steps taken)
+ * - Performance (execution time)
+ *
+ * This demonstrates the accuracy-efficiency trade-off:
+ * - Euler: Fast but inaccurate
+ * - RK4: Excellent accuracy with fixed steps
+ * - RK45: Automatic accuracy control, fewest steps for given tolerance
+ *
+ * Key insights:
+ * - Higher order methods allow larger steps for same accuracy
+ * - Adaptive methods find optimal step size automatically
+ * - For same step size, RK4 is ~100x more accurate than Euler
+ */
+
 int main()
 {
     using namespace ode;

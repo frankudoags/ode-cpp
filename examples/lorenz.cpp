@@ -3,6 +3,37 @@
 #include <fstream>
 #include <iomanip>
 
+/**
+ * Example 3: Lorenz Attractor (Chaotic 3D System)
+ *
+ * The Lorenz system is a set of ODEs that model atmospheric convection.
+ * It's famous for exhibiting chaotic behavior - the "butterfly effect".
+ *
+ * Equations:
+ *   dx/dt = σ(y - x)
+ *   dy/dt = x(ρ - z) - y
+ *   dz/dt = xy - βz
+ *
+ * State vector: y = [x, y, z]
+ *
+ * Parameters (classic chaotic regime):
+ *   σ = 10   (Prandtl number)
+ *   ρ = 28   (Rayleigh number)
+ *   β = 8/3  (geometric factor)
+ *
+ * Properties:
+ * - Deterministic but unpredictable (chaos)
+ * - Sensitive dependence on initial conditions
+ * - Strange attractor (butterfly shape)
+ * - No closed-form solution
+ *
+ * This example demonstrates:
+ * - 3D nonlinear system
+ * - Chaotic dynamics
+ * - Long-time integration
+ * - Data output for visualization
+ */
+
 int main()
 {
     using namespace ode;

@@ -5,6 +5,28 @@
 #include <cmath>
 #include <fstream>
 
+/**
+ * Example 2: Harmonic Oscillator (2D System)
+ *
+ * Problem: d²x/dt² = -ω²x (undamped spring-mass system)
+ *
+ * Convert to first-order system:
+ *   dx/dt = v
+ *   dv/dt = -ω²x
+ *
+ * State vector: y = [position, velocity]
+ *
+ * Exact solution: x(t) = A*cos(ωt) + B*sin(ωt)
+ * With x(0) = 1, v(0) = 0: x(t) = cos(ωt)
+ *
+ * Key property: Total energy E = ½(v² + ω²x²) is conserved
+ *
+ * This example demonstrates:
+ * - Multi-dimensional ODE systems (2D)
+ * - Energy conservation in physical systems
+ * - How RK4 preserves important system properties
+ */
+
 int main()
 {
     using namespace ode;
