@@ -13,17 +13,6 @@
  */
 namespace ode
 {
-    // Helper to add two states with scaling, used in RK4 calculations
-    // from the formula y_{n+1} = y_n + (h/6)(k₁ + 2k₂ + 2k₃ + k₄) we need to add states with scaling factors(like 2 for k2 and k3)
-    State RK4Solver::add_states(const State &a, const State &b, double scale_b) const
-    {
-        State result(a.size());
-        for (size_t i = 0; i < a.size(); ++i)
-        {
-            result[i] = a[i] + scale_b * b[i];
-        }
-        return result;
-    }
     State RK4Solver::step(const ODEFunction &f, Time t, const State &y, double h)
     {
         // instantiate the derivative at current state and time: k1 = f(t, y)
@@ -54,7 +43,7 @@ namespace ode
     {
         Solution solution;
         reserve(solution, config);
-        
+
         Time t = config.time_start;
         State y = config.initial_state;
 

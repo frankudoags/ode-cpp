@@ -27,5 +27,17 @@ namespace ode
             size_t steps = static_cast<size_t>((config.time_end - config.time_start) / config.step_size) + 1;
             solution.reserve(steps);
         }
+
+        // add two states with scaling
+        // result = a + scale_b * b
+        virtual State add_states(const State &a, const State &b, double scale_b = 1.0)
+        {
+            State result(a.size());
+            for (size_t i = 0; i < a.size(); ++i)
+            {
+                result[i] = a[i] + scale_b * b[i];
+            }
+            return result;
+        }
     };
 }
