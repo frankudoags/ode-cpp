@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
+  "name": "ode_solver",
   "version": "1.0.0",
-  "description": "My C++ project",
+  "description": "A C++ library for solving ordinary differential equations using various numerical methods. We implement Euler's method, Runge-Kutta 2nd order, Runge-Kutta 4th order, and Runge-Kutta-Fehlberg (RK45) solvers.",
   "dependencies": [
     "catch2"
   ]
